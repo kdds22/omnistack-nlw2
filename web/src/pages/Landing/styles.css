@@ -104,39 +104,39 @@
       "logo hero hero"
       "buttons buttons total";
   }
-}
 
-.logo-container {
-  grid-area: logo;
-  align-self: center;
-  text-align: left;
-  margin: 0;
-}
+  .logo-container {
+    grid-area: logo;
+    align-self: center;
+    text-align: left;
+    margin: 0;
+  }
 
-.logo-container h2 {
-  text-align: initial;
-  font-size: 3.6rem;
-}
+  .logo-container h2 {
+    text-align: initial;
+    font-size: 3.6rem;
+  }
 
-.logo-container img {
-  height: 100%;
-}
+  .logo-container img {
+    height: 100%;
+  }
 
-.hero-image {
-  grid-area: hero;
-  justify-self: end;
-}
+  .hero-image {
+    grid-area: hero;
+    justify-self: end;
+  }
 
-.buttons-container {
-  grid-area: buttons;
-  justify-content: flex-start;
-}
+  .buttons-container {
+    grid-area: buttons;
+    justify-content: flex-start;
+  }
 
-.buttons-container a {
-  font-size: 2.4rem;
-}
+  .buttons-container a {
+    font-size: 2.4rem;
+  }
 
-.total-connections {
-  grid-area: total;
-  justify-self: end;
+  .total-connections {
+    grid-area: total;
+    justify-self: end;
+  }
 }
