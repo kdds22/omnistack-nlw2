@@ -1,21 +1,11 @@
 import express from "express";
+import routes from "./routes";
 
 const app = express();
 
 app.use(express.json());
 
-app.post("/users", (request, response) => {
-  const users = [
-    { name: "Klaus", age: 24 },
-    { name: "Leticia", age: 22 },
-    { name: "Sophia", age: 17 },
-    request.body,
-  ];
-
-  console.log(users);
-
-  return response.json(users);
-});
+app.use(routes);
 
 //localhost:3333
 
