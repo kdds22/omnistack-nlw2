@@ -13,11 +13,28 @@ export default class ClassesController {
   async index(request: Request, response: Response) {
     const filters = request.query;
 
+    const week_day = filters.week_day as string;
+    const subject = filters.subject as string;
+    const time = filters.time as string;
+
     if (!filters.week_day || !filters.subject || !filters.time) {
       return response.status(400).json({
         error: "Falta filtros para pesquisa",
       });
     }
+
+    const timeInMinutes = convertHourToMinutes(time);
+
+    const classes = await db("classes")
+      .where("classes.subject", "=", subject)
+      .join("users", "id", "=", "classes.user_id")
+      .join("class_schedule", "class_id", "=", "classes.id")
+      .where("class_schedule.from", ">=", timeInMinutes)
+      .where("class_schedule.to", "<=", timeInMinutes);
+
+    console.log(classes);
+
+    return response.status(200).json({ Success: classes.toString() });
   }
 
   async create(request: Request, response: Response) {
